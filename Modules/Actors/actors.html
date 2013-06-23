@@ -1,0 +1,70 @@
+﻿<div ng-cloak>
+
+    <div id="loading" class="pageLoader"></div>
+
+
+    <form ng-submit="searchActors()">
+
+    <!--search-->
+<!--    <div>
+        <h4>Search in this results:</h4>
+        <input type="text" ng-model="search.$" />
+    </div>-->
+
+     <div>
+            <h4>Search on server side:</h4>
+            <input type="text" ng-model="searchText" />
+            <input type="submit" />
+        </div>
+
+    <div ng-show="allActors().length == 0" class="">There are no actors.</div>
+
+    <div class="divActorsMainTextAll" ng-show="allActors().length > 0">
+
+        <div style="text-align: right; padding-right: 100px">
+            <h5>Total actors: {{totalActors()}}</h5>
+        </div>
+
+        <table>
+            <tr ng-repeat="actor in allActors() | filter:search">
+
+                <td style="padding-left: 40px;">
+                    <img
+                        style="cursor: pointer; width: 80px"
+                        title="{{actor.name}}"
+                        alt="{{actor.name}}"
+                        ng-src="../App_Themes/ThemeDefault/{{actor.image}}"
+                        ng-click="showDetails({'title':'Actor details...', 'actor': actor})">
+                </td>
+
+                <td style="padding-left: 40px; width: 200px;">
+                    <label>
+                        <u>Actor</u>
+                    </label>
+               
+                    <a href="/#/modules/actor/actordetails/{{actor.id}}">
+                        {{actor.name}}
+                    </a>
+
+
+                </td>
+                <td style="vertical-align: middle;">
+                    <label>
+                        <u>Character</u>
+                    </label>
+                    <label>
+                        {{actor.character}}
+                    </label>
+                </td>
+
+            </tr>
+        </table>
+
+        <div style="text-align: center;">
+            <a style="cursor: pointer" ng-show="hasMoreActors()" ng-click="showMoreActors()">... more</a>
+        </div>
+    </div>
+    
+    </form>
+</div>
+

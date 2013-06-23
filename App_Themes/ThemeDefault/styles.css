@@ -1,0 +1,23 @@
+﻿
+body
+{
+}
+
+.pageLoader
+{
+    z-index: 99999;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    height: 15px;
+    width: 128px;
+    margin-left: -64px;
+    margin-top: -65px;
+    background-image: url(images/ajax-loader.gif);
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.paddingLeft10 {
+    padding-left: 10px;
+}

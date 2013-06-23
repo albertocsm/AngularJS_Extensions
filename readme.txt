@@ -1,0 +1,2 @@
+﻿As librarias utilizadas foram descarregadas para o projecto fazendo uso da Package Manager Console.
+Para descarregarem uma nova libraria vão ao site http://nuget.org/ e procuram pela libraria que pretendem e depois é só copiar a linha de consola e executar no Package Manager Console

@@ -1,0 +1,39 @@
+﻿
+<script language="javascript" type="text/javascript">        
+    $(document).ready(function () {
+        $('.modal').center();
+    });
+</script>
+
+<div class="modal-header">
+    <h2>{{dialogTitle}}</h2>
+</div>
+<div class="modal-body">
+
+    <div>
+        <!-- Title -->
+        <div>
+            <div>
+                <h2>{{actor.name}}</h2>
+            </div>
+        </div>
+
+        <!-- Pics and Description -->
+        <div>
+            <div>
+                <img ng-src="../App_Themes/ThemeDefault/{{actor.image}}" width="80px" style="cursor: pointer" title="{{actor.name}}" alt="{{actor.name}}">
+            </div>
+            <!-- Actor Description -->
+            <div>
+                <div><b>{{actor.character}}</b></div>
+                <div ng-bind-html-unsafe="actor.description"></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="modal-footer">
+    <button ng-click="close()" class="btn-primary btn-process">Ok</button>
+</div>
+
+

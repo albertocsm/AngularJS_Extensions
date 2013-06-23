@@ -1,0 +1,20 @@
+﻿<div ng-cloak>
+    <div style="height: 400px; width: 400px;">
+        <div>
+            <div>
+                <h2>{{actor.name}}</h2>
+            </div>
+        </div>
+
+        <div>
+            <div>
+                <img ng-src="{{image}}" width="80px" style="cursor: pointer" title="{{name}}" alt="{{name}}">
+            </div>
+            <!-- Actor Description -->
+            <div>
+                <div><b>{{character}}</b></div>
+                <div ng-bind-html-unsafe="description"></div>
+            </div>
+        </div>
+    </div>
+</div>
