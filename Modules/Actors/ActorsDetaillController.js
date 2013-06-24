@@ -13,3 +13,4 @@ var Actors;
     })();
     Actors.ActorsDetaillController = ActorsDetaillController;
 })(Actors || (Actors = {}));
+//@ sourceMappingURL=ActorsDetaillController.js.map
