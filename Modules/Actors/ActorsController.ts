@@ -32,13 +32,14 @@ module Actors {
 		constructor( $scope: IActorsScope, $dialog: any, actorService: Actors.ActorsService) {
 
 			//initialize controller            
-			this.actorCollection = new ng.e.MultiDataSource( actorService, 3 );			
-			//// If MultiDataSource was created with "Initialize" to false, you need to load manually
-			//// optionally, you can tap on .sucess (or .error) and do some other stuff with the response
-			////example:
-			//this.actorCollection.load().then( ( response ) => {
-			//	console.log( response );
-			//});
+			this.actorCollection = new ng.e.MultiDataSource( actorService, 3, false );			
+            //// If MultiDataSource was created with "Initialize" to false, you need to load manually
+            //// optionally, you can tap on .sucess (or .error) and do some other stuff with the response
+            ////example:
+            this.actorCollection.load().error((resp) => 
+            {
+                console.log(resp);
+            });
 
             //initialize Scope
             this.initializeScope($scope, $dialog);
@@ -51,7 +52,7 @@ module Actors {
 
             var controller = this;
 		
-            scope.allActors = function () {				
+            scope.allActors = function () {				                
                 return controller.actorCollection.items;
             };
 

@@ -55,6 +55,21 @@ var ng;
                 return;
             };
 
+            MultiDataSource.prototype.insert = function () {
+                throw EventException();
+                return;
+            };
+
+            MultiDataSource.prototype.update = function () {
+                throw EventException();
+                return;
+            };
+
+            MultiDataSource.prototype.delete = function () {
+                throw EventException();
+                return;
+            };
+
             MultiDataSource.prototype.getData = function (isRefreshing, callBack, search) {
                 if (typeof isRefreshing === "undefined") { isRefreshing = false; }
                 var _this = this;

@@ -12,10 +12,9 @@
             });
         };
 
-        ActorsService.prototype.get = function (filters, callback) {
+        ActorsService.prototype.get = function (filters) {
             return this.httpService.post("/api/Actors/Get", filters).success(function (data, status, headers, config) {
                 console.log("service get OK");
-                callback(data);
             }).error(function (data, status, headers, config) {
                 console.log("service get ERROR");
             });

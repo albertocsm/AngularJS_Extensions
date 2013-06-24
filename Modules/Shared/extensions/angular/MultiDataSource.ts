@@ -72,7 +72,22 @@ module ng.e{
 		public refresh(): ng.IHttpPromise{ 
 			throw EventException();
 			return;
-		}
+        }
+
+        public insert(): ng.IHttpPromise{ 
+			throw EventException();
+			return;
+        }
+
+        public update(): ng.IHttpPromise{ 
+			throw EventException();
+			return;
+        }
+
+        public delete(): ng.IHttpPromise{ 
+			throw EventException();
+			return;
+        }
         //#endregion
 
 

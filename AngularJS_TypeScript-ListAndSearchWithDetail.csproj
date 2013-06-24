@@ -135,14 +135,19 @@
     </Content>
     <Content Include="Modules\Actors\ActorsService.ts" />
     <Content Include="Modules\Shared\app.js" />
-    <Content Include="Modules\Shared\extensions\angular\IDataSourceService.js">
-      <DependentUpon>IDataSourceService.ts</DependentUpon>
+    <Content Include="Modules\Shared\extensions\angular\IMultiDataSourceService.js">
+      <DependentUpon>IMultiDataSourceService.ts</DependentUpon>
     </Content>
-    <Content Include="Modules\Shared\extensions\angular\IDataSourceService.min.js">
-      <DependentUpon>IDataSourceService.ts</DependentUpon>
+    <Content Include="Modules\Shared\extensions\angular\IMultiDataSourceService.min.js">
+      <DependentUpon>IMultiDataSourceService.ts</DependentUpon>
     </Content>
-    <Content Include="Modules\Shared\extensions\angular\IDataSourceService.ts" />
     <Content Include="Modules\Shared\extensions\angular\IMultiDataSourceService.ts" />
+    <Content Include="Modules\Shared\extensions\angular\MultiDataSource.js">
+      <DependentUpon>MultiDataSource.ts</DependentUpon>
+    </Content>
+    <Content Include="Modules\Shared\extensions\angular\MultiDataSource.min.js">
+      <DependentUpon>MultiDataSource.ts</DependentUpon>
+    </Content>
     <Content Include="Modules\Shared\extensions\angular\MultiDataSource.ts" />
     <Content Include="Modules\Shared\extensions\JQueryExtensions.js" />
     <Content Include="Modules\Shared\SharedService.js">
@@ -162,9 +167,6 @@
     <Content Include="Modules\Shared\typings\toastr\toastr.d.ts" />
     <Content Include="readme.txt" />
     <Content Include="Scripts\json3.min.js" />
-    <Content Include="Modules\Shared\extensions\angular\IDataSourceService.js.map">
-      <DependentUpon>IDataSourceService.ts</DependentUpon>
-    </Content>
     <Content Include="Modules\Shared\extensions\angular\IMultiDataSourceService.js.map">
       <DependentUpon>IMultiDataSourceService.ts</DependentUpon>
     </Content>
@@ -492,14 +494,6 @@
     <Content Include="Scripts\i18n\angular-locale_zu.js" />
     <Content Include="Scripts\jquery-2.0.2.js" />
     <Content Include="Scripts\jquery-2.0.2.min.js" />
-    <Content Include="Scripts\typings\angularjs\angular-cookies.d.ts" />
-    <Content Include="Scripts\typings\angularjs\angular-mocks.d.ts" />
-    <Content Include="Scripts\typings\angularjs\angular-resource.d.ts" />
-    <Content Include="Scripts\typings\angularjs\angular-sanitize.d.ts" />
-    <Content Include="Scripts\typings\angularjs\angular-scenario.d.ts" />
-    <Content Include="Scripts\typings\angularjs\angular.d.ts" />
-    <Content Include="Scripts\typings\jquery\jquery.d.ts" />
-    <Content Include="Scripts\typings\toastr\toastr.d.ts" />
     <Content Include="Scripts\ui-bootstrap-0.3.0.js" />
     <Content Include="Scripts\ui-bootstrap-0.3.0.min.js" />
     <Content Include="Scripts\ui-bootstrap-tpls-0.3.0.js" />

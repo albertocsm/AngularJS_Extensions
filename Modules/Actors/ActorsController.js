@@ -2,7 +2,11 @@
 (function (Actors) {
     var ActorsController = (function () {
         function ActorsController($scope, $dialog, actorService) {
-            this.actorCollection = new ng.e.MultiDataSource(actorService, 3);
+            this.actorCollection = new ng.e.MultiDataSource(actorService, 3, false);
+
+            this.actorCollection.load().error(function (resp) {
+                console.log(resp);
+            });
 
             this.initializeScope($scope, $dialog);
         }
