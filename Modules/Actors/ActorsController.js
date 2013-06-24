@@ -16,6 +16,7 @@
             scope.searchActors = function () {
                 controller.actorCollection.search(scope.searchText);
             };
+
             scope.hasMoreActors = function () {
                 return controller.actorCollection.hasMore();
             };

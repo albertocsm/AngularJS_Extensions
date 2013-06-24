@@ -45,13 +45,23 @@ var ng;
                 return this.getData(true, null, value);
             };
 
+            MultiDataSource.prototype.sort = function (sortBy) {
+                throw EventException();
+                return;
+            };
+
+            MultiDataSource.prototype.refresh = function () {
+                throw EventException();
+                return;
+            };
+
             MultiDataSource.prototype.getData = function (isRefreshing, callBack, search) {
                 if (typeof isRefreshing === "undefined") { isRefreshing = false; }
                 var _this = this;
                 var pageSize = isRefreshing ? _this.pageSize * _this.pagesShown : _this.pageSize;
                 var pageIndex = isRefreshing ? 1 : _this.pagesShown;
 
-                return _this.service.list({ PageIndex: pageIndex, PageSize: pageSize, SearchText: search }, function (data) {
+                return _this.service.list({ PageIndex: pageIndex, PageSize: pageSize, SearchText: search }).success(function (data) {
                     _this.totalRows = data.TotalRows;
 
                     if (isRefreshing) {
@@ -67,6 +77,8 @@ var ng;
                     if (callBack != null) {
                         callBack();
                     }
+
+                    console.log("MultiDataSource sucess-pre-proocessment OK");
                 });
             };
             return MultiDataSource;

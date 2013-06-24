@@ -2,7 +2,6 @@
 /// <reference path="../Shared/typings/angularjs/angular.d.ts" />
 /// <reference path="../Shared/extensions/angular/MultiDataSource.ts" />
 
-
 module Actors {
 
     export interface IActorsScope extends ng.IScope {
@@ -33,8 +32,7 @@ module Actors {
 		constructor( $scope: IActorsScope, $dialog: any, actorService: Actors.ActorsService) {
 
 			//initialize controller            
-			this.actorCollection = new ng.e.MultiDataSource( actorService, 3 );
-			
+			this.actorCollection = new ng.e.MultiDataSource( actorService, 3 );			
 			//// If MultiDataSource was created with "Initialize" to false, you need to load manually
 			//// optionally, you can tap on .sucess (or .error) and do some other stuff with the response
 			////example:
@@ -55,11 +53,12 @@ module Actors {
 		
             scope.allActors = function () {				
                 return controller.actorCollection.items;
-            }
+            };
 
             scope.searchActors = function () {
                 controller.actorCollection.search(scope.searchText);
-            }
+			};
+
             scope.hasMoreActors = function () {
                 return controller.actorCollection.hasMore();
             };

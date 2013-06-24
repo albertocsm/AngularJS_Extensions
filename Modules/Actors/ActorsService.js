@@ -4,19 +4,20 @@
         function ActorsService($http) {
             this.httpService = $http;
         }
-        ActorsService.prototype.list = function (filters, callback) {
+        ActorsService.prototype.list = function (filters) {
             return this.httpService.post("/api/Actors/List", filters).success(function (data, status, headers, config) {
                 console.log("service list OK");
-                callback(data);
             }).error(function (data, status, headers, config) {
                 console.log("service list ERROR");
             });
         };
 
         ActorsService.prototype.get = function (filters, callback) {
-            this.httpService.post("/api/Actors/Get", filters).success(function (data, status, headers, config) {
+            return this.httpService.post("/api/Actors/Get", filters).success(function (data, status, headers, config) {
+                console.log("service get OK");
                 callback(data);
             }).error(function (data, status, headers, config) {
+                console.log("service get ERROR");
             });
         };
         return ActorsService;

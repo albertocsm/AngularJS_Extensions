@@ -107,6 +107,13 @@
     <Content Include="Modules\Actors\ActorsService.min.js">
       <DependentUpon>ActorsService.ts</DependentUpon>
     </Content>
+    <TypeScriptCompile Include="Modules\Shared\extensions\angular\IDataSourceService.ts" />
+    <Content Include="Modules\Shared\extensions\angular\IDataSourceService.js">
+      <DependentUpon>IDataSourceService.ts</DependentUpon>
+    </Content>
+    <Content Include="Modules\Shared\extensions\angular\IDataSourceService.min.js">
+      <DependentUpon>IDataSourceService.ts</DependentUpon>
+    </Content>
     <Content Include="Modules\Shared\extensions\JQueryExtensions.js" />
     <TypeScriptCompile Include="Modules\Shared\SharedService.ts" />
     <Content Include="Modules\Shared\extensions\angular\MultiDataSource.js">

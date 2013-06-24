@@ -62,7 +62,17 @@ module ng.e{
 
         public search(value: string): ng.IHttpPromise {
             return this.getData(true, null, value);
-        }      
+		}      
+
+		public sort( sortBy: number ): ng.IHttpPromise {
+			throw EventException();
+			return;
+		}
+
+		public refresh(): ng.IHttpPromise{ 
+			throw EventException();
+			return;
+		}
         //#endregion
 
 
@@ -71,9 +81,9 @@ module ng.e{
             
             var _this = this;
             var pageSize = isRefreshing ? _this.pageSize * _this.pagesShown : _this.pageSize;
-            var pageIndex = isRefreshing ? 1 : _this.pagesShown;
-			
-			return _this.service.list({ PageIndex: pageIndex, PageSize: pageSize, SearchText: search}, function (data) {
+            var pageIndex = isRefreshing ? 1 : _this.pagesShown;					
+
+			return _this.service.list( { PageIndex: pageIndex, PageSize: pageSize, SearchText: search }).success(function(data){				
                 _this.totalRows = data.TotalRows;
 
                 if (isRefreshing) {
@@ -91,8 +101,11 @@ module ng.e{
 
                 if (callBack != null) {
                     callBack();
-                }
-            });
+				}
+				
+				console.log( "MultiDataSource sucess-pre-proocessment OK" );
+			});
+
         }      
         //#endregion
     }
